@@ -1,13 +1,12 @@
 /* eslint-disable react/prop-types */
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "../pages/HomePage";
-import NavBarComponent from "../components/navbar/NavBarComponent";
 import ImpactoPage from "../pages/ImpactoPage";
 import NosotrosPage from "../pages/NosotrosPage";
 import AliadosPage from "../pages/AliadosPage";
+import NavBarComponent from "../components/navbar/NavBarComponent";
 
 export const AppRouter = () => {
-
   return (
     <BrowserRouter>
       <NavBarComponent />

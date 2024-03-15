@@ -25,9 +25,9 @@ const CarouselComponent = () => {
       {items.map((item, index) => (
         <div
           key={index}
-          className={`${
-            index === activeIndex ? "block" : "hidden"
-          } w-full absolute left-0 `}
+          className={`w-full absolute left-0 transition-opacity duration-1000 ${
+            index === activeIndex ? "opacity-100" : "opacity-0"
+          }`}
         >
           <Image
             className="h-[700px] w-screen object-cover"

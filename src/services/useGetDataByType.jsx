@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
-import { client } from "../api/prismic";
 
 // Custom hook para obtener datos de un tipo específico desde la API de Prismic
 export function useGetDataByType(type) {
-
-  console.log("my client", client);
   // Referencia de la API de Prismic
   const ref = "ZfhZ2hIAACAAFuq2";
 
@@ -12,7 +9,7 @@ export function useGetDataByType(type) {
   const query = `q=[[at(document.type,"${type}")]]`;
 
   // Construir la URL de la consulta a la API de Prismic
-  const url = `https://canto-de-la-tierra.prismic.io/api/v2/documents/search?ref=${ref}&${query}&orderings=[document.first_publication_date%20desc]&pageSize=3`;
+  const url = `https://canto-de-la-tierra.prismic.io/api/v2/documents/search?ref=${ref}&${query}&orderings=[document.last_publication_date%20desc]&pageSize=3`;
 
   // Estado para almacenar los datos obtenidos de la API
   const [data, setData] = useState([]);
@@ -37,6 +34,7 @@ export function useGetDataByType(type) {
       .then((data) => {
         // Almacenar los datos obtenidos en el estado 'data'
         setData(data.results);
+        console.log(data.results);
 
         // Mapear los resultados obtenidos para construir los items a mostrar
         const newItems = data.results.map((result) => ({

@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'CantoTierra';
+    src: url("./fonts/Museo_Slab_100.otf");
+}
+@font-face {
+    font-family: 'CantoTierra300';
+    src: url("./fonts/Museo_Slab_300.otf");
+}
+@font-face {
+    font-family: 'CantoTierra500';
+    src: url("./fonts/Museo_Slab_500.otf");
+}
+@font-face {
+    font-family: 'CantoTierra700';
+    src: url("./fonts/Museo_Slab_700.otf");
+}
+@font-face {
+    font-family: 'CantoTierra900';
+    src: url("./fonts/Museo_Slab_900.otf");
+}

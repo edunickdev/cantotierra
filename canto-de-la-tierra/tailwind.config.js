@@ -10,9 +10,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#f99319",
+        primary: "#F99319",
         secondary: "#b73e02",
-        tertiary: "#103b51",
+        tertiary: "#103B51",
+      },
+      fontFamily: {
+        sans: ["CantoTierra", "sans-serif"],
       },
     },
   },

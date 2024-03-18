@@ -1,15 +1,18 @@
 import { useState, useEffect } from "react";
+import { client } from "../api/prismic";
 
 // Custom hook para obtener datos de un tipo específico desde la API de Prismic
 export function useGetDataByType(type) {
+
+  console.log("my client", client);
   // Referencia de la API de Prismic
-  const ref = "Ze_bIBIAAB4AqhJG";
+  const ref = "ZfhZ2hIAACAAFuq2";
 
   // Construir la consulta para obtener documentos del tipo especificado
   const query = `q=[[at(document.type,"${type}")]]`;
 
   // Construir la URL de la consulta a la API de Prismic
-  const url = `https://canto-de-la-tierra.prismic.io/api/v2/documents/search?ref=${ref}&${query}`;
+  const url = `https://canto-de-la-tierra.prismic.io/api/v2/documents/search?ref=${ref}&${query}&orderings=[document.first_publication_date%20desc]&pageSize=3`;
 
   // Estado para almacenar los datos obtenidos de la API
   const [data, setData] = useState([]);

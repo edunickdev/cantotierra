@@ -1,21 +1,18 @@
 import { Button, Image } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
+import { images } from "../../../config/statics";
 
 const QuienesSomos = () => {
-
   const navigate = useNavigate();
 
   return (
     <>
-      <div className="col-span-6 px-32 py-20 flex justify-center items-center">
-        <Image
-          className="min-h-96 max-h-96 min-w-80 max-w-80 object-cover"
-          src="https://wallpapercave.com/wp/wp5531876.jpg"
-          shadow="lg"
-          radius="lg"
-        />
+      <div className="col-span-6 px-32 flex justify-center items-center">
+          <Image
+            src={images.enmascarar}
+          />
       </div>
-      <div className="col-span-6 px-32 py-20 flex flex-col justify-center items-end">
+      <div className="col-span-6 px-32 py-10 flex flex-col justify-center items-end">
         <h2 className="text-4xl text-primary font-extrabold text-right mb-10">
           ¿Quienes Somos?
         </h2>
@@ -33,7 +30,9 @@ const QuienesSomos = () => {
           onPress={() => {
             navigate("/nosotros");
           }}
-        >Ver más</Button>
+        >
+          Ver más
+        </Button>
       </div>
     </>
   );

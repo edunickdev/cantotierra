@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 
 // Custom hook para obtener datos de un tipo específico desde la API de Prismic
-export function useGetDataByType(type) {
-  // Referencia de la API de Prismic
-  const ref = "ZfhZ2hIAACAAFuq2";
+export function useGetDataByType(type, ref) {
 
   // Construir la consulta para obtener documentos del tipo especificado
   const query = `q=[[at(document.type,"${type}")]]`;
@@ -34,7 +32,6 @@ export function useGetDataByType(type) {
       .then((data) => {
         // Almacenar los datos obtenidos en el estado 'data'
         setData(data.results);
-        console.log(data.results);
 
         // Mapear los resultados obtenidos para construir los items a mostrar
         const newItems = data.results.map((result) => ({

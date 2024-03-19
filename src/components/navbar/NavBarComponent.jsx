@@ -1,5 +1,5 @@
 import { Navbar, NavbarItem, Image } from "@nextui-org/react";
-import { useEffect, useState } from "react";
+import { useState } from "react"; 
 import { Link } from "react-router-dom";
 import { images } from "../../config/statics";
 
@@ -11,17 +11,6 @@ const NavBarComponent = () => {
   };
 
   const items = ["Inicio", "Impacto", "Nosotros", "Aliados"];
-
-  useEffect(() => {
-    const handleWebHookNotification = async () => {
-      try {
-        console.log("notificacion recibida");
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    handleWebHookNotification();
-  }, []);
 
   return (
     <Navbar

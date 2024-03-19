@@ -3,8 +3,9 @@ import { useGetDataByType } from "../../services/useGetDataByType";
 import { useState, useEffect } from "react";
 import { CircularProgress } from "@nextui-org/react";
 
-const CarouselComponent = () => {
-  const { data, loading, error, items } = useGetDataByType("destacados");
+const CarouselComponent =  () => {
+  const ref = sessionStorage.getItem("ref");
+  const { data, loading, error, items } = useGetDataByType("destacados", ref && ref);
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
@@ -17,17 +18,18 @@ const CarouselComponent = () => {
   }, [activeIndex, items]);
 
   return (
-    <div className="mt-20 relative" style={{ minHeight: "90vh", maxHeight: "90vh" }}>
+    <div
+      className="mt-20 relative"
+      style={{ minHeight: "90vh", maxHeight: "90vh" }}
+    >
       {loading && (
         <CircularProgress
-          className="min-w-full"
+          className="min-w-full flex justify-center items-center"
           aria-label="Cargando..."
         />
       )}
       {error && (
-        <p
-          className="text-center"
-        >
+        <p className="text-center flex justify-center items-center">
           Error: {error.message}
         </p>
       )}

@@ -4,9 +4,10 @@ import { images } from "../../../config/statics";
 const LoQueHacemos = () => {
   return (
     <>
-      <div className="col-span-12 bg-green-400">
+      <div className="col-span-12">
         <Image
-          className="h-[435px] w-full py-5"
+          width={"100%"}
+          className="h-[480px] py-5"
           radius="none"
           src={images.loquehacemos}
         />

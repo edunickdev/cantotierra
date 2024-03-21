@@ -8,15 +8,13 @@ const QuienesSomos = () => {
   return (
     <>
       <div className="col-span-6 px-32 flex justify-center items-center">
-          <Image
-            src={images.enmascarar}
-          />
+        <Image src={images.enmascarar} width={500} />
       </div>
       <div className="col-span-6 px-32 py-10 flex flex-col justify-center items-end">
         <h2 className="text-4xl text-primary font-extrabold text-right mb-10">
           ¿Quienes Somos?
         </h2>
-        <span className="text-right text-lg font-semibold mb-2">
+        <span className="text-right text-lg mb-2">
           Cantos de la Tierra es una fundación sin ánimo de lucro que, a través
           de la educación artística, musical y deportiva, refuerza la identidad
           de los niños y jóvenes de la vereda de Rumiyaco (Mocoa), ayudando al

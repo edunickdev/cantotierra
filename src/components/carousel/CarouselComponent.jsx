@@ -60,11 +60,11 @@ const CarouselComponent =  () => {
                 key={index}
                 className={`${
                   activeIndex === index
-                    ? "bg-primary"
-                    : "bg-slate-600 opacity-60"
-                }  sm:h-3 sm:w-3 lg:h-5 lg:w-5 rounded-full focus:outline-none mx-2 text-primary font-extrabold text-xl text-center shadow-md`}
+                    ? "text-primary"
+                    : "text-white"
+                }  sm:h-3 sm:w-3 lg:h-5 lg:w-5 rounded-full focus:outline-none mx-2 font-extrabold text-xl text-center shadow-md`}
                 onClick={() => setActiveIndex(index)}
-              ></button>
+              >{index + 1}</button>
             ))}
           </div>
         </div>

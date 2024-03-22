@@ -6,6 +6,7 @@ import Section from "../components/section/Section";
 import LoQueHacemos from "../components/section/Inicio/LoQueHacemos";
 import Destacados from "../components/section/Inicio/Destacados";
 import Contacto from "../components/section/Inicio/Contacto";
+import Footer from "../components/footer/footer";
 
 const HomePage = () => {
 
@@ -37,6 +38,7 @@ const HomePage = () => {
       />
       <Section childrens={<Destacados />} name={"Impacto"} />
       <Section childrens={<Contacto />} name={"Contacto"} heightvh="60vh" />
+      <Section childrens={<Footer />} name={"Contacto"} heightvh="60vh" />
     </>
   );
 };

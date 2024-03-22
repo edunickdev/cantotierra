@@ -40,7 +40,7 @@ const Destacados = () => {
       <h2 className="col-span-12 h-20 pt-24 pb-12 text-primary text-5xl text-center">
         Galeria Audiovisual
       </h2>
-      <div className="col-span-12 grid grid-cols-12 px-10 items-center pt-20">
+      <div className="col-span-12 grid grid-cols-12 px-10 items-center pt-20 mb-20">
         <div className="col-span-12 grid grid-cols-12 items-center">
           <Image
             className="col-span-1 self-end cursor-pointer"

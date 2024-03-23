@@ -14,7 +14,8 @@ const HomePage = () => {
     fetch("https://canto-de-la-tierra.prismic.io/api/v2/")
       .then((response) => response.json())
       .then((data) => {
-        sessionStorage.setItem("ref", data.refs[0].ref);
+        const ref = data.refs[0].ref;
+        sessionStorage.setItem("ref", ref);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -37,8 +38,8 @@ const HomePage = () => {
         heightvh="50vh"
       />
       <Section childrens={<Destacados />} name={"Impacto"} />
-      <Section childrens={<Contacto />} name={"Contacto"} heightvh="60vh" />
-      <Section childrens={<Footer />} name={"Contacto"} heightvh="60vh" />
+      <Section childrens={<Contacto />} name={"Contacto"} heightvh="80vh" />
+      <Section childrens={<Footer />} name={"Contacto"} heightvh="70vh" />
     </>
   );
 };

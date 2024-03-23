@@ -25,38 +25,36 @@ const Contacto = () => {
 
   return (
     <>
-      <div className="col-span-6 py-20 flex justify-center items-center">
-        <iframe
-          className="p-10"
-          allowFullScreen
-          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2116.158863161673!2d-74.13110798932297!3d4.707602033231703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1710993846187!5m2!1ses-419!2sco"
-          width="600"
-          height="450"
-        ></iframe>
-      </div>
-      <div className="col-span-6 flex flex-col justify-center items-center">
-        <h2 className="text-primary text-5xl font-bold">Contactanos</h2>
-        {contacto.map((item, index) => {
-          return (
-            <div
-              key={index}
-              className="flex justify-between items-center w-full px-20"
-            >
-              <div className="flex py-7 gap-x-10">
-                <Image
-                    width="40"
-                    height="40"
-                    src={item.urlImage} 
-                />
-                <span className="text-xl">{item.title}</span>
+      <div className="col-span-12 grid grid-cols-12 p-20">
+        <div className="col-span-6 pt-20 flex justify-center items-center">
+          <iframe
+            className="p-10"
+            allowFullScreen
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2116.158863161673!2d-74.13110798932297!3d4.707602033231703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1710993846187!5m2!1ses-419!2sco"
+            width="600"
+            height="450"
+          ></iframe>
+        </div>
+        <div className="col-span-6 flex flex-col justify-center items-center">
+          <h2 className="text-primary text-5xl font-bold">Contactanos</h2>
+          {contacto.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className="flex justify-between items-center w-full px-20"
+              >
+                <div className="flex py-7 gap-x-10">
+                  <Image width="40" height="40" src={item.urlImage} />
+                  <span className="text-xl">{item.title}</span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-xl">{item.content}</span>
+                  <span className="text-xl">{item.subcontent}</span>
+                </div>
               </div>
-              <div className="flex flex-col">
-                <span className="text-xl">{item.content}</span>
-                <span className="text-xl">{item.subcontent}</span>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </>
   );

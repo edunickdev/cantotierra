@@ -27,16 +27,16 @@ const Footer = () => {
 
   return (
     <footer className="col-span-12 flex sm:flex-wrap flex-col bg-tertiary">
-      <div className="flex justify-around" style={{ height: "48vh" }}>
+      <div className="flex justify-around" style={{ height: "60vh" }}>
         <div className="w-full px-32 py-20">
-          <h2 className="text-primary text-3xl">Nuestras Redes</h2>
-          <span className="text-white text-2xl">
+          <h2 className="text-primary text-3xl py-3">Nuestras Redes</h2>
+          <span className="text-white text-xl">
             Incididunt pariatur adipisicing sit amet culpa ipsum do ut aliquip
             commodo fugiat.
           </span>
           {redes.map((item, index) => {
             return (
-              <div key={index} className="flex items-center my-1">
+              <div key={index} className="flex items-center my-2 pt-2">
                 <Image height={30} width={30} src={item.icon} />
                 <span className="text-lg text-white px-5">{item.text}</span>
               </div>
@@ -97,7 +97,38 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex bg-primary" style={{ height: "10vh" }}></div>
+      <div className="flex bg-primary justify-around items-center" style={{ height: "10vh" }}>
+        <div className="flex items-center">
+          <Image 
+            height={60}
+            width={60}
+            src={images.footer}
+          />
+          <span className="text-white text-center px-4">Derechos de autor © 2023 Exsis Digital S.A.S.. Reservados todos los derechos.</span>
+        </div>
+        <div className="flex gap-x-2">
+          <Image
+            height={30}
+            width={30}
+            src={images.youtube2}
+          />
+          <Image
+            height={30}
+            width={30}
+            src={images.facebook2}
+          />
+          <Image
+            height={30}
+            width={30}
+            src={images.instagram2}
+          />
+          <Image
+            height={30}
+            width={30}
+            src={images.email2}
+          />
+        </div>
+      </div>
     </footer>
   );
 };

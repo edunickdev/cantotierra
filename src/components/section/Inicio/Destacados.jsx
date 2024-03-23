@@ -12,8 +12,6 @@ const Destacados = () => {
   const ref = sessionStorage.getItem("ref");
   const { data, loading } = useGetDataByType("galeria", ref && ref);
 
-  console.log(data);
-
   const settings = {
     className: "center col-span-2",
     AnimationEffect: "fade",
@@ -37,17 +35,17 @@ const Destacados = () => {
 
   return (
     <>
-      <h2 className="col-span-12 h-20 pt-24 pb-12 text-primary text-5xl text-center">
+      <h2 className="col-span-12 text-primary text-5xl text-center pt-36 px-32">
         Galeria Audiovisual
       </h2>
-      <div className="col-span-12 grid grid-cols-12 px-10 items-center pt-20 mb-20">
+      <div className="col-span-12 grid grid-cols-12 items-center px-32">
         <div className="col-span-12 grid grid-cols-12 items-center">
           <Image
             className="col-span-1 self-end cursor-pointer"
             src={images.flecha2}
             onClick={previousSlide}
           />
-          <div className="col-span-10 items-center h-[450px]">
+          <div className="col-span-10 items-center">
             <Slider ref={sliderRef} {...settings}>
               {loading && (
                 <CircularProgress
@@ -57,11 +55,9 @@ const Destacados = () => {
               )}
               {data.map((index) => {
                 return (
-                  <div key={index} className="p-3 h-[594px] w-[400px]">
-                    <div className="p-5">
+                  <div key={index} className="p-3">
+                    <div className="p-10">
                       <Image
-                        width={450}
-                        height={600}
                         radius="none"
                         src={index.data.urlimage.url}
                       />

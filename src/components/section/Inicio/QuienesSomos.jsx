@@ -1,9 +1,11 @@
 import { Button, Image } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
 import { images } from "../../../config/statics";
+import { useNavbarState } from "../../../store/navbarState";
 
 const QuienesSomos = () => {
   const navigate = useNavigate();
+  const selection = useNavbarState((state) => state.setNavbarState);
 
   return (
     <>
@@ -26,6 +28,7 @@ const QuienesSomos = () => {
         <Button
           className="bg-tertiary text-white px-12 rounded-3xl mb-2 text-lg font-bold"
           onPress={() => {
+            selection("Nosotros");
             navigate("/nosotros");
           }}
         >

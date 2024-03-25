@@ -15,6 +15,7 @@ import instagram2 from "../assets/instagram2.svg";
 import youtube2 from "../assets/youtube2.svg";
 import email2 from "../assets/email2.svg";
 import footer from "../assets/footer.svg";
+import logo2 from "../assets/logo2.png";
 
 
 export const images = {
@@ -35,4 +36,5 @@ export const images = {
     youtube2: youtube2,
     email2: email2,
     footer: footer,
+    logo2: logo2,
 }

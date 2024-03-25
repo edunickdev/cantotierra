@@ -41,13 +41,13 @@ const Contacto = () => {
             return (
               <div
                 key={index}
-                className="flex justify-between items-center w-full px-20"
+                className="flex justify-between items-center w-full px-5"
               >
-                <div className="flex py-7 gap-x-10">
+                <div className="flex w-full py-7 gap-x-5">
                   <Image width="40" height="40" src={item.urlImage} />
-                  <span className="text-xl">{item.title}</span>
+                  <span className="text-xl text-wrap">{item.title}</span>
                 </div>
-                <div className="flex flex-col">
+                <div className="flex w-full flex-col">
                   <span className="text-xl">{item.content}</span>
                   <span className="text-xl">{item.subcontent}</span>
                 </div>

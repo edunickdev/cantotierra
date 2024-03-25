@@ -1,9 +1,16 @@
-const ImpactoPage = () => {
-    return (
-        <div>
-            <h1>Impacto</h1>
-        </div>
-    )
-}
+import CarouselComponent from "../components/carousel/CarouselComponent";
+import Footer from "../components/footer/footer";
+import Section from "../components/section/Section";
 
-export default ImpactoPage
+const ImpactoPage = () => {
+
+  return (
+    <>
+      <CarouselComponent group={"carrusel-impacto"} />
+      <Section childrens={""} />
+      <Section childrens={<Footer />} name={"Contacto"} heightvh="60vh" />
+    </>
+  );
+};
+
+export default ImpactoPage;

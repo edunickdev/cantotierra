@@ -20,9 +20,6 @@ const Destacados = () => {
     lazyLoad: true,
     slidesToShow: 3,
     swipeToSlide: true,
-    afterChange: function (index) {
-      console.log(`Slider Changed to: ${index + 1}`);
-    },
   };
 
   const nextSlide = () => {
@@ -54,13 +51,12 @@ const Destacados = () => {
                 />
               )}
               {data.map((index) => {
+                const url = index.data.urlimage.url;
+
                 return (
                   <div key={index} className="p-3">
-                    <div className="p-10">
-                      <Image
-                        radius="none"
-                        src={index.data.urlimage.url}
-                      />
+                    <div className="p-3">
+                      <Image radius="none" src={url} />
                     </div>
                   </div>
                 );

@@ -1,13 +1,15 @@
 import { Navbar, NavbarItem, Image } from "@nextui-org/react";
-import { useState } from "react"; 
 import { Link } from "react-router-dom";
 import { images } from "../../config/statics";
+import { useNavbarState } from "../../store/navbarState";
 
 const NavBarComponent = () => {
-  const [active, setActive] = useState("Inicio");
+
+  const selection = useNavbarState((state) => state.navbarState);
+  const setSelection = useNavbarState((state) => state.setNavbarState);
 
   const handleActive = (value) => {
-    setActive(value);
+    setSelection(value);
   };
 
   const items = ["Inicio", "Impacto", "Nosotros", "Aliados"];
@@ -29,15 +31,17 @@ const NavBarComponent = () => {
         <NavbarItem key={item}>
           <Link
             className={`${
-              active == item ? "text-primary" : "text-black"
+              selection == item ? "text-primary" : "text-black"
             } text-[24px]`}
-            color={active == item ? "warning" : "foreground"}
+            color={selection == item ? "warning" : "foreground"}
             to={"/" + item.toLowerCase()}
             onClick={() => handleActive(item)}
           >
             {item}
           </Link>
-          {active == item && <div className="bg-primary h-[3px] w-full "></div>}
+          {selection == item && (
+            <div className="bg-primary h-[3px] w-full "></div>
+          )}
         </NavbarItem>
       ))}
     </Navbar>

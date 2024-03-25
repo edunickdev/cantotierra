@@ -1,8 +1,13 @@
+import CarouselComponent from "../components/carousel/CarouselComponent";
+import Footer from "../components/footer/footer";
+import Section from "../components/section/Section";
+
 const AliadosPage = () => {
   return (
-    <div>
-      <h1>Aliados</h1>
-    </div>
+    <>
+      <CarouselComponent group={"carrusel-impacto"} />
+      <Section childrens={<Footer />} name={"Contacto"} heightvh="60vh" />
+    </>
   );
 };
 

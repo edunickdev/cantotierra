@@ -16,6 +16,14 @@ import youtube2 from "../assets/youtube2.svg";
 import email2 from "../assets/email2.svg";
 import footer from "../assets/footer.svg";
 import logo2 from "../assets/logo2.png";
+import imagen1 from "../assets/programas1.png";
+import imagen2 from "../assets/programas2.png";
+import imagen3 from "../assets/programas3.png";
+import imagen4 from "../assets/programas4.png";
+import artes1 from "../assets/artes1.png";
+import artes2 from "../assets/artes2.png";
+import artes3 from "../assets/artes3.png";
+import artes4 from "../assets/artes4.png";
 
 
 export const images = {
@@ -37,4 +45,12 @@ export const images = {
     email2: email2,
     footer: footer,
     logo2: logo2,
+    imagen1: imagen1,
+    imagen2: imagen2,
+    imagen3: imagen3,
+    imagen4: imagen4,
+    artes1: artes1,
+    artes2: artes2,
+    artes3: artes3,
+    artes4: artes4,
 }

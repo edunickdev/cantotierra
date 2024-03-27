@@ -4,7 +4,6 @@ import { images } from "../../config/statics";
 import { useNavbarState } from "../../store/navbarState";
 
 const NavBarComponent = () => {
-
   const selection = useNavbarState((state) => state.navbarState);
   const setSelection = useNavbarState((state) => state.setNavbarState);
 
@@ -40,7 +39,7 @@ const NavBarComponent = () => {
             {item}
           </Link>
           {selection == item && (
-            <div className="bg-primary h-[3px] w-full "></div>
+            <div className="bg-primary h-[3px]"></div>
           )}
         </NavbarItem>
       ))}

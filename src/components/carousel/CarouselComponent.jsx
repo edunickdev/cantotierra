@@ -35,7 +35,7 @@ const CarouselComponent =  ({ group }) => {
           style={{ minHeight: "90vh", maxHeight: "90vh" }}
         />
       )}
-      {!loading &&
+      {!loading && !error &&
         items.map((item, index) => (
           <div
             key={index}

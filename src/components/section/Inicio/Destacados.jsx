@@ -1,14 +1,10 @@
-import { useRef } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick/lib/slider";
-import { images } from "../../../config/statics";
-import { CircularProgress, Image } from "@nextui-org/react";
 import { useGetDataByType } from "../../../services/useGetDataByType";
+import CustomSlider from "../../slider/CustomSlider";
+import { Image } from "@nextui-org/react";
 
 const Destacados = () => {
-  const sliderRef = useRef(null);
-
   const ref = sessionStorage.getItem("ref");
   const { data, loading } = useGetDataByType("galeria", ref && ref);
 
@@ -22,13 +18,17 @@ const Destacados = () => {
     swipeToSlide: true,
   };
 
-  const nextSlide = () => {
-    sliderRef.current.slickNext();
-  };
+  const child = data && data.map((index) => {
+    const url = index.data.urlimage.url;
 
-  const previousSlide = () => {
-    sliderRef.current.slickPrev();
-  };
+    return (
+      <div key={index} className="p-3">
+        <div className="p-3">
+          <Image radius="none" src={url} />
+        </div>
+      </div>
+    );
+  });
 
   return (
     <>
@@ -36,39 +36,11 @@ const Destacados = () => {
         Galeria Audiovisual
       </h2>
       <div className="col-span-12 grid grid-cols-12 items-center px-32">
-        <div className="col-span-12 grid grid-cols-12 items-center">
-          <Image
-            className="col-span-1 self-end cursor-pointer"
-            src={images.flecha2}
-            onClick={previousSlide}
-          />
-          <div className="col-span-10 items-center">
-            <Slider ref={sliderRef} {...settings}>
-              {loading && (
-                <CircularProgress
-                  className="min-w-full flex justify-center items-center"
-                  aria-label="Cargando..."
-                />
-              )}
-              {data.map((index) => {
-                const url = index.data.urlimage.url;
-
-                return (
-                  <div key={index} className="p-3">
-                    <div className="p-3">
-                      <Image radius="none" src={url} />
-                    </div>
-                  </div>
-                );
-              })}
-            </Slider>
-          </div>
-          <Image
-            className="col-span-1 self-start cursor-pointer"
-            src={images.flecha1}
-            onClick={nextSlide}
-          />
-        </div>
+        <CustomSlider
+          settings={settings}
+          loading={loading}
+          child={child}
+        />
       </div>
     </>
   );
